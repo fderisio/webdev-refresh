@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title for Google</title>
+</head>
+
+<body>
+    <h1>Basic HTML</h1>
+    <h2>Form</h2>
+    <!-- button element on its own does nothing, action can be added with JS -->
+    <button>Submit (does nothing)</button>
+
+    <form action="/sign_up">
+        
+        <div>
+            <!-- for="IDname": if you click on the label, cursor goes to the input -->
+            <!-- name="element_name" will be sent when the data is submitted -->
+            <label for="cheese">Do you like cheese?</label>
+            <input type="checkbox" name="cheese" id="cheese">
+        </div>        
+
+        <div>
+            <label for="name">Enter username</label>
+            <input type="text" placeholder="username" name="name" id="name">
+        </div>
+
+        <div>
+            <label for="password">Enter password</label>
+            <input type="password" placeholder="password" name="password" id="password">    
+        </div>
+        
+        <div>
+            <label for="fav_color">What is your favorite color?</label>
+            <input type="color" name="fav_color" id="fav_color">    
+        </div>
+        
+        <div>
+            <label for="age">What is your age?</label>
+            <input type="number" name="age" id="age" min="18" max="99">   
+        </div>
+
+        <!-- You can also nest the input element in the label -->
+        <label>
+            What is your age?
+            <input type="number" name="age" id="age">
+        </label>
+
+        <div>
+            <!-- button element inside a form element works -->
+            <button>Submit</button>
+            <!-- so this one! enter the name of the button under property "value" -->
+            <input type="submit" value="Submit (input)">
+            <!-- type button removes the submit action -->
+            <button type="button">Submit (type button)</button>
+        </div>
+      
+    </form>
+
+    <h3>Use Google and YouTube Search</h3>
+    <!-- Search URL  -->
+    <form action="https://www.google.com/search">
+        <input type="text" name="q">
+        <button>Search Google</button>
+    </form>
+
+    <!-- Search URL: https://www.youtube.com/results?search_query=age+of+empires -->
+    <!-- The text after the "?" is the property "name" of the data input  -->
+    <form action="https://www.youtube.com/results">
+        <input type="text" name="search_query">
+        <button>Search YouTube</button>
+    </form>
+    
+    <h2>More Input Elements</h2>
+    <form action=/checkout>
+    
+        <h3>Radio Buttons</h3>
+        <!-- property "value" is what it is sent to the server!!  -->
+        <label for="size">Choose size</label>
+        <div name="size">
+            <input type="radio" name="size" value="xs">
+            <label for="xs">XS</label>
+            <input type="radio" name="size" value="s">
+            <label for="s">S</label>
+            <input type="radio" name="size" value="m">
+            <label for="m">M</label>
+        </div>
+
+        <h3>Drop-down menu</h3>
+        <!-- property "value" is what it is sent to the server!!  -->
+        <!-- attribute "selected" while select that option as default  -->
+        <label for="color-select">Select color</label>
+        <select name="color-select" id="color-select">
+            <option value="">--Please select an option--</option>
+            <option value="white">white</option>
+            <option value="blue">blue</option>
+            <option value="black">black</option>
+        </select>
+
+        <h3>Checkbox</h3>
+        <input type="checkbox" name="agree" id="agree">
+        <label for="agree">I agree to Terms & Conditions.</label>
+
+        <h3>Range</h3>
+        <!-- "step" increases & "value" is the default-->
+        <input type="range" id="volume" name="volume" min="0" max="50" step="5" value="25">
+        <label for="volume">Volume</label>
+
+        <button>Submit</button>
+    </form>
+
+    <h2>Bonus Track</h2>
+    <label for="comments">Comments (optional)</label>
+    <br>
+    <textarea name="comments" id="comments" rows="10" cols="30" placeholer="Type here"></textarea>
+
+    <!-- Server side validation -->
+    <h2>Validations Demo ("required" attribute)</h2>
+    <form action="/dummy-validation">
+        <div>
+            <label for="name">Username</label>
+            <input type="text" placeholder="username" name="name" id="name" required>
+        </div>
+
+        <!-- "required" of an email input validates the email address (checks pattern)-->
+        <div>
+            <label for="name">Email</label>
+            <input type="email" placeholder="email" name="email" id="email" required>
+        </div>
+
+        <div>
+            <label for="password">Password</label>
+            <input type="password" placeholder="password" name="password" id="password" required>    
+        </div>
+
+        <button>Submit</button>
+
+    </form>
+
+</div>
+</body>
+
+</html>
